@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IndiFit</title>
-
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
 </head>
 <body>
   <!-- Header Section -->
@@ -26,11 +28,60 @@
       </ul>
     </nav>
     <!-- Public/index.html remains static -->
-     <div class="btn_style"><a href="pages/auth.html" class="btn_login login-btn" id="login-button">Login</a>
-      <a href="pages/auth.html" class="btn signup-btn" id="signup-button">Signup</a></div>
+     <a href="pages/auth.html" class="btn signup-btn" id="signup-button">LOGIN</a>
+      
     
     
   </header>
+
+<center><div class="wrapper">
+  <span class="icon-close">
+    <ion-icon name="close-outline"></ion-icon></span>
+  <div class="form-box login">
+    <h2>Login</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" required><label for="#">Email</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" required><label>Password</label>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="login-registration">
+        <p>Don't have an account? <a href="#" class="register-link">Singup</a></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="form-box signup">
+    <h2>SIGNUP</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        <input type="text" required><label for="#">Username</label>
+      </div><div class="input-box">
+        <span class="icon"><ion-icon name="call"></ion-icon></span>
+        <input type="phone" required><label for="#">Phone</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" required><label for="#">Email</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" required><label>Password</label>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="login-registration">
+        <p>Already have an account? <a href="#" class="register-link">Login</a></p>
+      </div>
+    </form>
+  </div>
+</div></center>
+
+  
 
   <!-- Body Section -->
   <section class="homepage-section">

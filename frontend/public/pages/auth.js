@@ -1,6 +1,7 @@
 let isLogin = true;
 
 const formTitle = document.getElementById('form-title');
+const formBtn = document.getElementById('submit-btn');
 const toggleAuthMode = document.getElementById('toggle-auth-mode');
 const signupFields = document.getElementById('signup-fields');
 const signupPasswordFields = document.getElementById('signup-password-fields');
@@ -64,6 +65,7 @@ toggleAuthMode.addEventListener('click', () => {
 
   // Update form title and button text
   formTitle.textContent = isLogin ? 'User Login' : 'User Signup';
+  formBtn.textContent = isLogin ? 'Login' : 'Signup';
   toggleAuthMode.textContent = isLogin
     ? "Don't have an account? Sign up"
     : 'Already have an account? Log in';
@@ -72,12 +74,33 @@ toggleAuthMode.addEventListener('click', () => {
   signupFields.style.display = isLogin ? 'none' : 'block';
   signupPasswordFields.style.display = isLogin ? 'none' : 'block';
   loginFields.style.display = isLogin ? 'block' : 'none';
+
+  // Handle `required` attribute dynamically
+  const signupInputs = signupFields.querySelectorAll('input, select');
+  const signupPasswordInputs = signupPasswordFields.querySelectorAll('input');
+  const loginInputs = loginFields.querySelectorAll('input');
+
+  if (isLogin) {
+    // Remove required for signup fields
+    loginInputs.forEach(input => input.removeAttribute('required'));
+    signupPasswordInputs.forEach(input => input.removeAttribute('required'));
+
+    // Add required for login fields
+    loginInputs.forEach(input => input.setAttribute('required', ''));
+  } else {
+    // Remove required for login fields
+    loginInputs.forEach(input => input.removeAttribute('required'));
+
+    // Add required for signup fields
+    signupInputs.forEach(input => input.setAttribute('required', ''));
+    signupPasswordInputs.forEach(input => input.setAttribute('required', ''));
+  }
 });
 
 // Handle form submission
 authForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  
+
   const name = document.getElementById('name')?.value;
   const age = document.getElementById('age')?.value;
   const gender = document.getElementById('gender')?.value;
@@ -105,7 +128,7 @@ authForm.addEventListener('submit', async (event) => {
 
   try {
     const response = await fetch(
-      `http://localhost:3001/Student/${isLogin ? 'login' : 'signup'}`,
+      `http://localhost:3000/User/${isLogin ? 'login' : 'signup'}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -117,7 +140,7 @@ authForm.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       alert(isLogin ? 'Login Successful' : 'Signup Successful');
-      if (isLogin) window.location.href = '/studentdashboard';
+      if (isLogin) window.location.href = 'userPages/dashboard.html';
     } else {
       alert(`Error: ${data.message || 'Unknown error'}`);
     }

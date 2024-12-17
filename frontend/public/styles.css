@@ -1,8 +1,10 @@
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Popins');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Popins',sans-serif;
 }
 
 @font-face {
@@ -56,6 +58,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
+  font-family:'Popins', sans-serif;
 }
 
 .nav ul li a:hover {
@@ -69,13 +72,6 @@ body {
 }
 
 /* Container for buttons */
-.auth-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px; /* Add space above the buttons */
-}
-
 
 
 .btn {
@@ -84,12 +80,111 @@ body {
   font-weight: bold;
   color: #fff;
   background-color: #2DD8B6; /* Green color */
-  border: none;
-  border-radius: 15px;
+  border: .25rem solid white;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
+
+.wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+position:relative;
+width: 400px;
+height: 440px;
+background: transparent;
+border: 2px solid rgba(255, green, blue, .2);
+border-radius: 20px;
+backdrop-filter: blur(20px);
+box-shadow: 0 0 30px #2DD8B6;
+overflow: hidden;
+}
+
+.wrapper .form-box{
+  width: 100%;
+  padding: 40px;
+
+}
+
+.form-box h2{
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+}
+
+
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #fff;
+  margin: 30px 0;
+}
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #1abc9c;
+  font-weight: 500;
+  pointer-events: none;
+}
+  .input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #16a085;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+
+  }
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+  top: 5px;
+}
+
+.input-box .icon{
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  line-height: 57px;
+}
+
+.register-link{
+  color:#2DD8B6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link:hover{
+  color: #66f8db;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.icon-close{
+position: absolute;
+top: 0;
+right: 0;
+width: 45px;
+height: 45px;
+background-color: #fff;
+font-size: 2em;
+color: #000;
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom-left-radius: 20px;
+z-index: 1;
+}
+
 
 /* Hover effect */
 .btn:hover {
@@ -97,51 +192,27 @@ body {
   transform: scale(1.05);
 }
 
-.btn_style{
-  display: flex;
-
-}
-
-.btn_login {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #2DD8B6; /* Green color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-
-/* Hover effect */
-.btn_login:hover {
-  background-color: #1abc9c; /* Slightly darker green */
-  transform: scale(1.05);
-}
-/* Individual button customization */
-.login-btn {
-  background-color: #000; /* Login button green */
-}
-
 .signup-btn {
   background-color: #2DD8B6; /* Signup button green */
 }
 
-/* Optional: Add responsiveness */
-@media (max-width: 768px) {
-  .auth-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn {
-    width: 100%; /* Full width for smaller screens */
-    text-align: center;
-  }
+.nav ul li a::after{
+  content: '';
+  content:absolute;
+  width: 100%;
+  height: 3px;
+  background: #2DD8B6;
+  border-radius: .25rem;
+  bottom: -6px;
+  transform: scaleX(0);
+  transition: transform .5s;
+  transform-origin: left;
 }
 
+.nav ul li a:hover:after{
+  transform-origin: right;
+  transform: scaleX(1);
+}
 
 /* Homepage Section */
 .homepage-section {
@@ -221,20 +292,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  color: #000;
-  background-color: #2DD8B6;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #16a085;
 }
 
 

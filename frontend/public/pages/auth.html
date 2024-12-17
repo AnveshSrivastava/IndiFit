@@ -14,38 +14,35 @@
       <div class="image-item"><img src="images/img3.png" alt="Avatar 3"></div>
       <div class="image-item"><img src="images/img4.png" alt="Avatar 4"></div>
     </div>
-
+    
     <div class="auth-form-container">
       <h2 id="form-title">User Login</h2>
       <form id="auth-form">
-        <!-- Signup Fields (Hidden on Login) -->
+        <!-- Login Fields -->
+        <div id="login-fields">
+          <input type="email" id="login-email" name="email" placeholder="Email Address" required>
+          <input type="password" id="login-password" name="password" placeholder="Password" required>
+        </div>
+      
+        <!-- Signup Fields -->
         <div id="signup-fields" class="hidden">
-          <input type="text" id="name" name="name" placeholder="Full Name" required>
-          <input type="number" id="age" name="age" placeholder="Age" required>
-          <select id="gender" name="gender" required>
+          <input type="text" id="signup-name" name="name" placeholder="Full Name" required>
+          <input type="number" id="signup-age" name="age" placeholder="Age" required>
+          <select id="signup-gender" name="gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="others">Others</option>
           </select>
-          <input type="email" id="email" name="email" placeholder="Email Address" required>
-          <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+          <input type="email" id="signup-email" name="email" placeholder="Email Address" required>
+          <input type="text" id="signup-phone" name="phone" placeholder="Phone Number" required>
+          <input type="password" id="signup-password" name="password" placeholder="Password" required>
+          <input type="password" id="signup-confirm-password" name="confirm_password" placeholder="Confirm Password" required>
         </div>
-        
-        <!-- Login Fields (Email and Password) -->
-        <div id="login-fields">
-          <input type="email" id="email" name="email" placeholder="Email Address" required>
-          <input type="password" id="password" name="password" placeholder="Password" required>
-        </div>
-        
-        <!-- Signup Fields (Password and Confirm Password) -->
-        <div id="signup-password-fields" class="hidden">
-          <input type="password" id="password" name="password" placeholder="Password" required>
-          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-        </div>
-        
+      
         <button type="submit" id="submit-btn">Login</button>
       </form>
+      
       <p>
         <span id="toggle-auth-mode" class="toggle-link">Don't have an account? Sign up</span>
       </p>

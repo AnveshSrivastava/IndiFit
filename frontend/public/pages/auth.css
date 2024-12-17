@@ -87,6 +87,10 @@ body {
     border-radius: 30px;
     cursor: pointer;
   }
+  .auth-form-container button:hover{
+    background-color: #1abc9c; /* Slightly darker green */
+  transform: scale(1.05);
+  }
   
   .toggle-link {
     color: #2DD8B6;
