@@ -33,3 +33,4 @@ function rotateText() {
 
 // Start the animation when the page loads
 window.addEventListener('DOMContentLoaded', rotateText);
+

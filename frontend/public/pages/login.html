@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Auth Page</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="image-grid">
+      <div class="image-item"><img src="images/img1.png" alt="Avatar 1"></div>
+      <div class="image-item"><img src="images/img2.png" alt="Avatar 2"></div>
+      <div class="image-item"><img src="images/img3.png" alt="Avatar 3"></div>
+      <div class="image-item"><img src="images/img4.png" alt="Avatar 4"></div>
+    </div>
+    
+    <div class="auth-form-container">
+      <h2 id="form-title">User Login</h2>
+      <form id="auth-form">
+        <!-- Login Fields -->
+        <div id="login-fields">
+          <input type="email" id="login-email" name="email" placeholder="Email Address" required>
+          <input type="password" id="login-password" name="password" placeholder="Password" required>
+        </div>
+      
+      
+        <button type="submit" id="submit-btn">Login</button>
+      </form>
+      
+      <p>
+        <span id="toggle-auth-mode" class="toggle-link">Don't have an account? <a href="signup.html">Sign up</a></span>
+      </p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

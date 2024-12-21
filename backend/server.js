@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Your frontend's URL
+  origin:'http://127.0.0.1:5501', // Your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
 }));

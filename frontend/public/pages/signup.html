@@ -18,14 +18,8 @@
     <div class="auth-form-container">
       <h2 id="form-title">User Login</h2>
       <form id="auth-form">
-        <!-- Login Fields -->
-        <div id="login-fields">
-          <input type="email" id="login-email" name="email" placeholder="Email Address" required>
-          <input type="password" id="login-password" name="password" placeholder="Password" required>
-        </div>
-      
         <!-- Signup Fields -->
-        <div id="signup-fields" class="hidden">
+        <div id="signup-fields" class="">
           <input type="text" id="signup-name" name="name" placeholder="Full Name" required>
           <input type="number" id="signup-age" name="age" placeholder="Age" required>
           <select id="signup-gender" name="gender" required>
@@ -40,15 +34,15 @@
           <input type="password" id="signup-confirm-password" name="confirm_password" placeholder="Confirm Password" required>
         </div>
       
-        <button type="submit" id="submit-btn">Login</button>
+        <button type="submit" id="submit-btn">Signup</button>
       </form>
       
       <p>
-        <span id="toggle-auth-mode" class="toggle-link">Don't have an account? Sign up</span>
+        <span id="toggle-auth-mode" class="toggle-link">Already have an account? <a href="login.html">Login</a></span>
       </p>
     </div>
   </div>
 
-  <script src="auth.js"></script>
+  <script src="signup.js"></script>
 </body>
 </html>
